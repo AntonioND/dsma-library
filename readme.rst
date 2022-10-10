@@ -6,8 +6,8 @@ Introduction
 
 **DSMA** (DS Model Animation) is a library that allows you to convert animated
 models saved in MD5 format into a format that can be displayed in the Nintendo DS
-in a very efficient way. This library depends on ``libnds``, which comes with
-``devkitPro``.
+in a very efficient way. This library depends on ``libnds``, which is
+distributed by ``devkitPro``.
 
 MD5 supports skeletal animation, which lets you reuse the same model with
 multiple animations (a ``md5mesh`` file can be used with multiple ``md5anim``
