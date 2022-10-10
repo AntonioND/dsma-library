@@ -51,7 +51,7 @@ The library is under the MIT license, and the examples are licensed under the
 CC0 license.
 
 To get the latest version of this library, go to the repository:
-https://github.com/AntonioND/ds-model-animation-library
+https://github.com/AntonioND/dsma-library
 
 Generating and converting MD5 models
 ------------------------------------
