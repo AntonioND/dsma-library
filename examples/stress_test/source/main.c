@@ -214,15 +214,15 @@ int main(void)
 
         draw_and_update_models();
 
+        // Wait for geometry engine operations to end
+        while (GFX_STATUS & BIT(27));
+
         uint32_t end_time = cpuEndTiming();
 
         const float us_per_frame = 1000000.0 / 60.0;
         printf("\x1b[20;0H         %6lu  %4lu  %.3f%%  ",
                end_time, timerTicks2usec(end_time),
                100.0 * timerTicks2usec(end_time) / us_per_frame);
-
-        // Wait for geometry engine operations to end
-        while (GFX_STATUS & BIT(27));
 
         printf("\x1b[23;0HPolys: %4d      Vertices: %4d",
                GFX_POLYGON_RAM_USAGE, GFX_VERTEX_RAM_USAGE);
