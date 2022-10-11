@@ -2,7 +2,7 @@
 //
 // Copyright (c) 2022 Antonio Niño Díaz <antonio_nd@outlook.com>
 
-// DS Model Animation Library v0.1.0
+// DS Model Animation Library v0.1.1
 
 #include <nds.h>
 
