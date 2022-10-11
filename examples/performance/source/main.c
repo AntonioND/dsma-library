@@ -1,3 +1,7 @@
+// SPDX-License-Identifier: CC0-1.0
+//
+// SPDX-FileContributor: Antonio Niño Díaz, 2022
+
 #include <stdio.h>
 
 #include <nds.h>
