@@ -9,6 +9,10 @@
 
 #include <nds.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #ifndef ARM_CODE
 # define ARM_CODE __attribute__((target("arm")))
 #endif
@@ -32,5 +36,9 @@ int DSMA_DrawModel(const void *dsm_file, const void *dsa_file, uint32_t frame_in
 #define DSMA_INVALID_VERSION    -1
 #define DSMA_INVALID_FRAME      -2
 #define DSMA_MATRIX_STACK_FULL  -3
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // DSMA_H__
