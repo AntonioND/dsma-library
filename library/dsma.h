@@ -2,7 +2,7 @@
 //
 // Copyright (c) 2022 Antonio Niño Díaz <antonio_nd@outlook.com>
 
-// DS Model Animation Library v0.1.1
+// DS Model Animation Library v0.2.0
 
 #ifndef DSMA_H__
 #define DSMA_H__

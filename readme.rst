@@ -22,7 +22,8 @@ the following files:
   DSM model if you have multiple animations for it.
 
 The library supports interpolation between frames so that DSA files can have a
-smaller size by reducing the number of stored frames in it.
+smaller size by reducing the number of stored frames in it. It also supports
+blending two animations to make seamless transitions between them.
 
 You are expected to load the files in some way (either including them as binary
 data in your game, or loading them from the filesystem) and pass them to the
@@ -34,6 +35,7 @@ You can test them with an emulator such as **DeSmuME** or **melonDS** or in real
 hardware with a flashcard.
 
 - **basic_model**: Simply load an animated model embedded in the binary.
+- **blended_animations**: Blend two animations in the same model.
 - **filesystem_loading**: Load models from the filesystem (with **nitroFS**).
 - **multiple_animations**: Display one model with multiple animations.
 - **performance**: Show how much CPU time it takes to draw an animated model.
