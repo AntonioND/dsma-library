@@ -111,10 +111,9 @@ Convert the animations only:
 Converting textures
 -------------------
 
-In order to convert textures you can use some tool like
-**nitro-texture-converter**, found here:
+In order to convert textures you can use some tool like **img2ds**, found here:
 
-https://github.com/AntonioND/nitro-engine/tree/master/tools/nitro_texture_converter
+https://github.com/AntonioND/nitro-engine/tree/master/tools/img2ds
 
 ``md5_to_dsma``
 ---------------
