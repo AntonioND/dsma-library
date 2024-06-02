@@ -115,9 +115,12 @@ Convert the animations only:
 Converting textures
 -------------------
 
-In order to convert textures you can use some tool like **img2ds**, found here:
+In order to convert textures you can use:
 
-https://github.com/AntonioND/nitro-engine/tree/master/tools/img2ds
+- **grit**: Distributed by BlocksDS and devkitPro. It supports all texture
+  formats except for Tex4x4.
+- `ptexconv <https://github.com/Garhoogin/ptexconv>`_: It supports all texture
+  formats, even Tex4x4.
 
 ``md5_to_dsma``
 ---------------
