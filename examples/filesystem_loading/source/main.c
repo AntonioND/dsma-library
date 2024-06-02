@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: CC0-1.0
 //
-// SPDX-FileContributor: Antonio Niño Díaz, 2022
+// SPDX-FileContributor: Antonio Niño Díaz, 2022-2024
 
 #include <stdbool.h>
 #include <stdio.h>
@@ -147,8 +147,13 @@ int main(void)
     int textureID;
     glGenTextures(1, &textureID);
     glBindTexture(0, textureID);
-    glTexImage2D(0, 0, GL_RGB, TEXTURE_SIZE_128, TEXTURE_SIZE_128, 0,
-                 TEXGEN_TEXCOORD, texture128);
+    if (glTexImage2D(0, 0, GL_RGB, TEXTURE_SIZE_128, TEXTURE_SIZE_128, 0,
+                     TEXGEN_TEXCOORD, texture128) == 0)
+    {
+        printf("Failed to load texture");
+        while (1)
+            swiWaitForVBlank();
+    }
 
     // Obtain number of frames in the animation
     const uint32_t num_frames = DSMA_GetNumFrames(dsa_file);

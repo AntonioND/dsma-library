@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: CC0-1.0
 //
-// SPDX-FileContributor: Antonio Niño Díaz, 2022
+// SPDX-FileContributor: Antonio Niño Díaz, 2022-2024
 
 #include <stdio.h>
 
@@ -70,8 +70,13 @@ int main(void)
     int textureID;
     glGenTextures(1, &textureID);
     glBindTexture(0, textureID);
-    glTexImage2D(0, 0, GL_RGB, TEXTURE_SIZE_128, TEXTURE_SIZE_128, 0,
-                 TEXGEN_TEXCOORD, (u8*)texture128_bin);
+    if (glTexImage2D(0, 0, GL_RGBA, TEXTURE_SIZE_128, TEXTURE_SIZE_128, 0,
+                     TEXGEN_TEXCOORD, (u8 *)texture128_bin) == 0)
+    {
+        printf("Failed to load texture");
+        while (1)
+            swiWaitForVBlank();
+    }
 
     const void *dsm_file = robot_dsm_bin;
     const void *dsa_file_1 = robot_wave_dsa_bin;
