@@ -21,7 +21,7 @@ int file_load(const char *filename, void **buffer, size_t *size_)
 
     if (f == NULL)
     {
-        iprintf("%s couldn't be opened!\n", filename);
+        printf("%s couldn't be opened!\n", filename);
         return -1;
     }
 
@@ -32,7 +32,7 @@ int file_load(const char *filename, void **buffer, size_t *size_)
 
     if (size == 0)
     {
-        iprintf("Size of %s is 0!\n", filename);
+        printf("Size of %s is 0!\n", filename);
         fclose(f);
         return -1;
     }
@@ -41,14 +41,14 @@ int file_load(const char *filename, void **buffer, size_t *size_)
     *buffer = malloc(size);
     if (*buffer == NULL)
     {
-        iprintf("Not enought memory to load %s!\n", filename);
+        printf("Not enought memory to load %s!\n", filename);
         fclose(f);
         return -1;
     }
 
     if (fread(*buffer, size, 1, f) != 1)
     {
-        iprintf("Error while reading: %s\n", filename);
+        printf("Error while reading: %s\n", filename);
         fclose(f);
         free(*buffer);
         return -1;
@@ -108,7 +108,7 @@ int main(void)
 
     if (!nitroFSInit(NULL))
     {
-        iprintf("nitroFSInit failed.\nPress START to exit");
+        printf("nitroFSInit failed.\nPress START to exit");
         while(1)
         {
             swiWaitForVBlank();
@@ -128,7 +128,7 @@ int main(void)
     ret |= file_load("texture128.bin", &texture128, &texture128_size);
     if (ret)
     {
-        iprintf("Press START to exit");
+        printf("Press START to exit");
         while(1)
         {
             swiWaitForVBlank();
@@ -147,8 +147,7 @@ int main(void)
     int textureID;
     glGenTextures(1, &textureID);
     glBindTexture(0, textureID);
-    if (glTexImage2D(0, 0, GL_RGB, TEXTURE_SIZE_128, TEXTURE_SIZE_128, 0,
-                     TEXGEN_TEXCOORD, texture128) == 0)
+    if (glTexImage2D(0, 0, GL_RGBA, 128, 128, 0, TEXGEN_TEXCOORD, texture128) == 0)
     {
         printf("Failed to load texture");
         while (1)

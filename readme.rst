@@ -6,8 +6,9 @@ Introduction
 
 **DSMA** (DS Model Animation) is a library that allows you to convert animated
 models saved in MD5 format into a format that can be displayed in the Nintendo DS
-in a very efficient way. This library depends on **libnds**, which is
-distributed by **devkitPro**.
+in a very efficient way. This library depends on **libnds**. You can use the
+library with `BlocksDS <https://blocksds.github.io/docs/>`_ or `devkitPro
+<https://devkitpro.org>`_. The examples in this repository use BlocksDS.
 
 MD5 supports skeletal animation, which lets you reuse the same model with
 multiple animations (a **md5mesh** file can be used with multiple **md5anim**
@@ -31,12 +32,15 @@ functions exposed by the library header.
 
 There are multiple examples of how to use the library in this repository. They
 all use libnds, and most of the 3D setup code is generic libnds 3D setup code.
-You can test them with an emulator such as **DeSmuME** or **melonDS** or in real
+You can build them with `BlocksDS <https://blocksds.github.io/docs/>`_ and you
+can test them with an emulator such as **DeSmuME** or **melonDS** or in real
 hardware with a flashcard.
 
 - **basic_model**: Simply load an animated model embedded in the binary.
 - **blended_animations**: Blend two animations in the same model.
 - **filesystem_loading**: Load models from the filesystem (with **nitroFS**).
+  Note that this example won't work in **melonDS** if it's built with devkitPro
+  due to a bug in their implementation of NitroFS.
 - **multiple_animations**: Display one model with multiple animations.
 - **performance**: Show how much CPU time it takes to draw an animated model.
 - **stress_test**: Show multiple animated models with different animations.
@@ -187,9 +191,11 @@ Future work
 Thanks to
 ---------
 
-- **devkitPro**: https://devkitpro.org/
+- **devkitPro**: For helping develop the first version of the library.
+  https://devkitpro.org/
 - **Blender**: https://www.blender.org/
-- **Blender** addon used to generate models: https://github.com/KozGit/Blender-2.8-MD5-import-export-addon
+- **Blender** addon used to generate models:
+  https://github.com/KozGit/Blender-2.8-MD5-import-export-addon
 - MD5 format information: http://tfc.duke.free.fr/coding/md5-specs-en.html
 - Quaternion to matrix conversion: http://www.songho.ca/opengl/gl_quaternion.html
 - **DeSmuME**: http://desmume.org/

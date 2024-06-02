@@ -70,8 +70,7 @@ int main(void)
     int textureID;
     glGenTextures(1, &textureID);
     glBindTexture(0, textureID);
-    if (glTexImage2D(0, 0, GL_RGBA, TEXTURE_SIZE_128, TEXTURE_SIZE_128, 0,
-                     TEXGEN_TEXCOORD, (u8 *)texture128_bin) == 0)
+    if (glTexImage2D(0, 0, GL_RGBA, 128, 128, 0, TEXGEN_TEXCOORD, texture128_bin) == 0)
     {
         printf("Failed to load texture");
         while (1)
@@ -183,7 +182,7 @@ int main(void)
                       POLY_FORMAT_LIGHT1 | POLY_FORMAT_LIGHT2 | POLY_FORMAT_LIGHT3);
 
             glTranslatef(0, 3, 5);
-            glCallList((uint32_t *)ball_bin);
+            glCallList(ball_bin);
         }
         glPopMatrix(1);
 

@@ -68,8 +68,7 @@ int main(void)
     int textureID;
     glGenTextures(1, &textureID);
     glBindTexture(0, textureID);
-    if (glTexImage2D(0, 0, GL_RGBA, TEXTURE_SIZE_128, TEXTURE_SIZE_128, 0,
-                     TEXGEN_TEXCOORD, (u8 *)texture128_bin) == 0)
+    if (glTexImage2D(0, 0, GL_RGBA, 128, 128, 0, TEXGEN_TEXCOORD, texture128_bin) == 0)
     {
         printf("Failed to load texture");
         while (1)
@@ -86,22 +85,22 @@ int main(void)
     const uint32_t quad_num_frames = DSMA_GetNumFrames(quad_dsa_file);
     int32_t quad_frame = 0;
 
-    iprintf("\x1b[0;0HExit demo: START");
+    printf("\x1b[0;0HExit demo: START");
 
-    iprintf("\x1b[4;0H"
-            "This sample shows two models\n"
-            "side by side.\n"
-            "\n"
-            "The robot has aprox. 550 polys\n"
-            "and 16 bones. It's an example\n"
-            "of a regular model\n."
-            "\n"
-            "The quad has 2 polys and 7\n"
-            "bones. It's an example of how\n"
-            "much CPU time the skeleton\n"
-            "calculations take.\n");
+    printf("\x1b[4;0H"
+           "This sample shows two models\n"
+           "side by side.\n"
+           "\n"
+           "The robot has aprox. 550 polys\n"
+           "and 16 bones. It's an example\n"
+           "of a regular model\n."
+           "\n"
+           "The quad has 2 polys and 7\n"
+           "bones. It's an example of how\n"
+           "much CPU time the skeleton\n"
+           "calculations take.\n");
 
-    iprintf("\x1b[19;0HTime       Ticks   us    CPU%%");
+    printf("\x1b[19;0HTime       Ticks   us    CPU%%");
 
     while(1)
     {

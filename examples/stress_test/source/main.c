@@ -186,8 +186,7 @@ int main(void)
     int textureID;
     glGenTextures(1, &textureID);
     glBindTexture(0, textureID);
-    if (glTexImage2D(0, 0, GL_RGBA, TEXTURE_SIZE_128, TEXTURE_SIZE_128, 0,
-                     TEXGEN_TEXCOORD, (u8 *)texture128_bin) == 0)
+    if (glTexImage2D(0, 0, GL_RGBA, 128, 128, 0, TEXGEN_TEXCOORD, texture128_bin) == 0)
     {
         printf("Failed to load texture");
         while (1)
@@ -196,10 +195,10 @@ int main(void)
 
     initialize_models();
 
-    iprintf("\x1b[0;0HRotate: Left/Right");
-    iprintf("\x1b[1;0HExit demo: START");
+    printf("\x1b[0;0HRotate: Left/Right");
+    printf("\x1b[1;0HExit demo: START");
 
-    iprintf("\x1b[19;0HTime      Ticks   us    CPU%%");
+    printf("\x1b[19;0HTime      Ticks   us    CPU%%");
 
     float rotationY = 0.0f;
 
