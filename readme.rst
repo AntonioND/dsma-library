@@ -169,19 +169,28 @@ The options supported are:
 Displaying models on the NDS
 ----------------------------
 
-The library only has two functions:
+The library only has three functions:
 
-- ``uint32_t DSMA_GetNumFrames(const void *dsa_file)``
+- ``DSMA_GetNumFrames()``
 
   Returns the number of frames of the animation in a DSA file.
 
-- ``int DSMA_DrawModel(const void *dsm_file, const void *dsa_file, uint32_t frame_interp)``
+- ``DSMA_DrawModel()``
 
   Draws the model in a DSM file with the animation in a DSA file.
 
   The value of the frame to be drawn is a fixed point value (20.12, or ``f32``).
   If the frame is an integer value there is no interpolation between frames. If
   the frame value is between frames the function will interpolate between them.
+
+- ``DSMA_DrawModelBlendAnimation()``
+
+  Draws the model in the DSM file animated with the data in the specified DSA
+  files, at the requested frame, with the requested blending factor between the
+  two animations.
+
+  This allows you to merge two animations while you're switching from one to the
+  other one, for example.
 
 Future work
 -----------
