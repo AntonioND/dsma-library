@@ -32,7 +32,6 @@ uint32_t DSMA_GetNumFrames(const void *dsa_file);
 ITCM_CODE ARM_CODE
 int DSMA_DrawModel(const void *dsm_file, const void *dsa_file, uint32_t frame_interp);
 
-
 // Draws the model in the DSM file animated with the data in the specified DSA
 // files, at the requested frame, with the requested blending factor between the
 // two animations.
